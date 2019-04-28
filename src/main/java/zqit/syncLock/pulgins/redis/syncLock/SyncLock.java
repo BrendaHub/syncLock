@@ -21,6 +21,13 @@ public class SyncLock {
 	private Long safetyTime;
 	private Long waitMillisPer;
 
+	public SyncLock(String key, RedisTemplate<String, Object> redisTemplate, Long expire) {
+		this.key = key;
+		this.redisTemplate = redisTemplate;
+		this.expire = expire;
+		this.safetyTime = 5 * this.expire;
+		this.waitMillisPer = 200L;
+	}
 	public SyncLock(String key, RedisTemplate<String, Object> redisTemplate, Long expire, Long safetyTime) {
 		this.key = key;
 		this.redisTemplate = redisTemplate;

@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@EnableAspectJAutoProxy
 @SpringBootApplication
 @ComponentScan
 public class SyncApp  extends SpringBootServletInitializer //需要打包为war时， 继承SpringBootServletInitializer，同时重写configure方法

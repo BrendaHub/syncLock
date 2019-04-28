@@ -9,28 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import zqit.syncLock.pulgins.redis.test.RedisService;
 
 @Controller
-@RequestMapping("/redisTest")
-public class RedisTestController {
+@RequestMapping("/redisCache")
+public class RedisCacheTestController {
 
 	@Autowired
 	RedisService redisService;
 	
-	// redis redisTemplate 测试
-	@ResponseBody
-	@GetMapping("/redisTest")
-	public String redisTest() {
-		//set
-		System.out.println(redisService.setRedisCache());
-		//get
-		System.out.println(redisService.getRedisCache());
-		//del
-		System.out.println(redisService.delRedisCache());
-		//get
-		System.out.println(redisService.getRedisCache());
-		
-		return "redisTest";
-	}
-
 	// 缓存测试 - 如果缓存存在，则不执行方法内容
 	@ResponseBody
 	@GetMapping("/redisTestSelect")

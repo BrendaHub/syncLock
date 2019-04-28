@@ -1,4 +1,4 @@
-package zqit.syncLock.pulgins.redis;
+package zqit.syncLock.pulgins.redis.base;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,6 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+/**
+ * redis操作模版工具类
+ * @author mac
+ *
+ */
 @Component
 public class RedisUtils {
 
